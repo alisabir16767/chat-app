@@ -7,12 +7,10 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server);
 
-// Serve the HTML file
 app.get("/", (req, res) => {
   res.sendFile(join(__dirname, "index.html"));
 });
 
-// Socket.IO connection event
 io.on("connection", (socket) => {
   console.log("a user connected");
 
